@@ -27,9 +27,9 @@ def tick():
         seconds = 0
         minutes += 1
     if minutes == 0:
-        label1.configure(text="{0:2d}:{1:2d}".format(seconds, miliseconds))
+        label1.configure(text="{}:{}".format(seconds, miliseconds))
     elif minutes < 60:
-        label1.configure(text="{0:2d}:{1:2d}".format(minutes, seconds))
+        label1.configure(text="{}:{}".format(minutes, seconds))
     elif minutes >= 60:
         label1.configure(text="Выключи меня! Я устал...")
     miliseconds += 1
