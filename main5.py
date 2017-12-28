@@ -10,12 +10,14 @@ minutes = 0
 seconds = 0
 miliseconds = 0
 
+
 # FUNCTIONS ---------------------------------
 
 def start_sw():
     btn1.grid_forget()
     btn2.grid(row=1, columnspan=2, sticky="ew")
     tick()
+
 
 def tick():
     global after_id, miliseconds, seconds, minutes
@@ -34,17 +36,20 @@ def tick():
         label1.configure(text="Выключи меня! Я устал...")
     miliseconds += 1
 
+
 def stop_sw():
     btn2.grid_forget()
     btn3.grid(row=1, column=0, sticky="ew")
     btn4.grid(row=1, column=1, sticky="ew")
     root.after_cancel(after_id)
 
+
 def continue_sw():
     btn3.grid_forget()
     btn4.grid_forget()
     btn2.grid(row=1, columnspan=2, sticky="ew")
     tick()
+
 
 def reset_sw():
     global miliseconds, seconds, minutes
@@ -55,6 +60,7 @@ def reset_sw():
     btn3.grid_forget()
     btn4.grid_forget()
     btn1.grid(row=1, columnspan=2, sticky="ew")
+
 
 # PROGRAMME ----------------------------------
 
@@ -69,6 +75,5 @@ btn3 = Button(root, text="Continue", font=("Ubuntu", 30), command=continue_sw)
 btn4 = Button(root, text="Reset", font=("Ubuntu", 30), command=reset_sw)
 
 btn1.grid(row=1, columnspan=2, sticky="ew")
-
 
 root.mainloop()
